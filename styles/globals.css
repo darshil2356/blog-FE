@@ -1,0 +1,35 @@
+/* styles/globals.css */
+:root{
+  --bg:#fff;
+  --muted:#6b7280;
+  --text:#111827;
+  --primary:#0ea5a4;
+  --card-bg:#ffffff;
+  --max-width:1100px;
+  --radius:12px;
+  --shadow: 0 6px 18px rgba(15,23,42,0.06);
+  --transition: 180ms;
+  --content-gap:24px;
+}
+
+*{box-sizing:border-box}
+html,body,#__next{height:100%}
+body{
+  margin:0;
+  color:var(--text);
+  background:#f8fafc;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  font-family: 'Lato', sans-serif;
+}
+
+/* utility */
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:32px 18px;
+}
+
+/* simple focus outline for accessibility */
+:focus{outline:3px solid rgba(14,165,164,0.14); outline-offset:2px; border-radius:6px}

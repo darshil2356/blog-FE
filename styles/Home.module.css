@@ -1,0 +1,115 @@
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.heading {
+  font-family: "Lato", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #222;
+  animation: fadeDown 0.6s ease-in-out;
+}
+
+.subheading {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #555;
+  animation: fadeDown 0.8s ease-in-out;
+}
+
+.postList {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.postCard {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.postCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.imageWrapper {
+  overflow: hidden;
+  height: 180px;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.postCard:hover .heroImage {
+  transform: scale(1.08);
+}
+
+.content {
+  padding: 1rem;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #111;
+  transition: color 0.3s ease;
+}
+
+.postCard:hover .title {
+  color: #0070f3;
+}
+
+.meta {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 0.5rem;
+}
+
+.rating {
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  color: #ff9800;
+  font-weight: 500;
+}
+
+.body {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+/* animations */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

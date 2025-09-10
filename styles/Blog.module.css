@@ -1,0 +1,40 @@
+/* styles/Blog.module.css */
+.grid{
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap:32px;
+  align-items:start;
+  padding:32px 0;
+}
+@media (max-width:900px){
+  .grid{grid-template-columns: 1fr; padding:20px 0}
+}
+
+.content{
+  background:var(--card-bg);
+  padding:24px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+
+.heroWrap{margin-bottom:18px}
+.title{font-size:1.8rem;margin:6px 0}
+.meta{color:var(--muted);font-size:0.95rem;margin-bottom:10px}
+.controls{margin-top:14px}
+.btn{
+  background:var(--primary);
+  color:white;
+  border:0;
+  padding:8px 12px;
+  border-radius:10px;
+  cursor:pointer;
+  transition:transform var(--transition);
+}
+.btn:hover{transform:translateY(-2px)}
+.sidebar{position:relative}
+.card{padding:16px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfeff);box-shadow:var(--shadow)}
+.related{list-style:none;padding:0;margin:12px 0 0 0}
+.relatedItem{margin-bottom:12px}
+.relatedLink{display:flex;gap:12px;text-decoration:none;color:inherit}
+.relatedThumb{width:64px;height:64px;object-fit:cover;border-radius:8px}
+.relatedTitle{font-size:0.95rem}
