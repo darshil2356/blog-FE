@@ -1,12 +1,14 @@
 // lib/types.ts
 export interface Post {
-  formattedDate?: any;
+  formattedDate?: string;
   _id?: string;
   id?: string; // optional for front-end
   title: string;
   slug: string;
   body: string;
   author?: string;
+  authorImage?:string;
+  authorBio?:string;
   heroImage?: string;
   date?: string;
   comments?: Comment[];
@@ -14,11 +16,12 @@ export interface Post {
 }
 
 export interface Comment {
+  id: null | undefined;
   avatar?: string;
   _id?: string;
   postId: string;
   text: string;
-  rating?: number;
-  createdAt?: string;
+  rating?:  string | number | undefined;
+  createdAt?:  string | number | undefined;
   author?: string;
 }

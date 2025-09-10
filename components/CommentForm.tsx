@@ -27,6 +27,7 @@ export default function CommentForm({ postId, onAdd }: Props) {
       text: text.trim(),
       rating,
       createdAt: new Date().toISOString(),
+      id: undefined
     };
 
     try {

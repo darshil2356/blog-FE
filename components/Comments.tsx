@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 // components/Comments.tsx
 import React from 'react';
 import { Comment } from '../lib/types';
@@ -58,16 +60,23 @@ export default function Comments({ postId }: Props) {
           {comments.map(c => (
             <li key={c.id} className={styles.item}>
               <div className={styles.itemContent}>
-                <img src="/images/authorImage.jpg" alt={name} className={styles.authorAvatar} />
+                <img src="/images/authorImage.jpg" className={styles.authorAvatar} />
                 <div className={styles.itemText}>
                   <div className={styles.itemHeader}>
                     <strong>{c.author}</strong>
                     <div>
-                      <span className={styles.rating} aria-label={`Rating ${c.rating} of 5`}>{'★'.repeat(c.rating)}</span>
+                      <span
+                        className={styles.rating}
+                        aria-label={`Rating ${c.rating || 0} of 5`}
+                      >
+                        {'★'.repeat(Number(c.rating) || 0)}
+                      </span>
                     </div>
                   </div>
                   <div className={styles.itemBody}>
-                    <time dateTime={c.createdAt} className={styles.time}>{new Date(c.createdAt).toLocaleString()}</time>
+                    <time dateTime={c.createdAt?.toString()} className={styles.time}>
+                      {new Date(c.createdAt || '').toLocaleString()}
+                    </time>
                     <p className={styles.commentDescription}>{c.text}</p>
                   </div>
                 </div>

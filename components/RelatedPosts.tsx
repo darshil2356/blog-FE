@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "../styles/BlogPage.module.css";
 import { Post } from "@/lib/types";
+import { API_URL } from "@/lib/api";
 
 type RelatedPostsProps = {
   currentSlug: string;
@@ -13,7 +14,7 @@ export default function RelatedPosts({ currentSlug }: RelatedPostsProps) {
     async function fetchRelated() {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000/api"}/posts?limit=5`
+          `${API_URL}/posts?limit=5`
         );
         const data = await res.json();
 

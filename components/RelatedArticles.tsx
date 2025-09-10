@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link"; // ✅ import Link
 import styles from "../styles/RelatedArticles.module.css";
+import { API_URL } from "@/lib/api";
 
 type Article = {
   id: number;
@@ -15,7 +16,7 @@ export default function RelatedArticles({ postId }: { postId: string }) {
   const [articles, setArticles] = useState<Article[]>([]);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/api/posts/related/${postId}`)
+    fetch(`${API_URL}/posts/related/${postId}`)
       .then((res) => res.json())
       .then((data) => setArticles(data));
   }, [postId]);

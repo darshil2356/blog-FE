@@ -1,6 +1,6 @@
 import { Post } from "./types";
 
-export const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api'; // adjust port
+export const API_URL = process.env.NEXT_PUBLIC_API_URL; // adjust port
 
 // Get all posts
 export async function fetchPosts(limit = 20, page = 1) {

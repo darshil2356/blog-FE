@@ -1,4 +1,5 @@
 // lib/posts.ts
+import { API_URL } from './api';
 import { Post } from './types';
 
 export const POSTS: Post[] = [
@@ -27,7 +28,7 @@ Full-body workouts are efficient, effective, and scalable.
 ];
 
 export async function getAllPosts() {
-    const res = await fetch('http://localhost:4000/api/posts'); // or your API URL
+    const res = await fetch(`${API_URL}/posts`); // or your API URL
     const data = await res.json();
     return data as Post[];
 }
