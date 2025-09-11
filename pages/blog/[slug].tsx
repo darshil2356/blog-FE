@@ -38,7 +38,7 @@ export default function BlogPage({ post }: Props) {
         <meta name="description" content={post.title} />
       </Head>
 
-      {post.heroImage && (
+      {/* {post.heroImage && (
         <div className={styles.heroWrap}>
           <h1 className={styles.title}>{post.title}</h1>
           <img
@@ -48,7 +48,19 @@ export default function BlogPage({ post }: Props) {
             loading="lazy"
           />
         </div>
-      )}
+      )} */}
+
+      <div className={styles.heroWrap}>
+  <h1 className={styles.title}>{post.title}</h1>
+  <img
+    src={post.heroImage || ""}
+    alt={post.heroImage ? post.title : "No image available"}
+    className={styles.hero}
+    loading="lazy"
+  />
+</div>
+
+
       <article className={`container ${styles.grid}`}>
         {/* LEFT CONTENT */}
         <section className={styles.content}>

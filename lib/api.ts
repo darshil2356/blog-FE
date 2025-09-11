@@ -1,6 +1,8 @@
 import { Post } from "./types";
 
-export const API_URL = "https://blog-be-rho.vercel.app/api"; // adjust port
+// export const API_URL =  ||"https://blog-be-rho.vercel.app/api"; // adjust port
+export const API_URL = `${process.env.NEXT_PUBLIC_API_BASE}/api` || "https://blog-be-rho.vercel.app/api";
+
 
 // Get all posts
 export async function fetchPosts(limit = 20, page = 1) {
