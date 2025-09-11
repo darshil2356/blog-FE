@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/api/:path*', // frontend calls /api/...
-        destination: 'https://blog-239msq077-darshil2356s-projects.vercel.app/api/:path*', // your Vercel backend
+        destination: 'https://blog-be-rho.vercel.app/api/:path*', // your Vercel backend
       },
     ];
   },
